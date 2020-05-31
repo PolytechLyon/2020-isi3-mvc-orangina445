@@ -26,8 +26,8 @@ Le pattern MVP, vise à découper le `modèle`, de la `vue` et du `controlleur` 
 Les responsabilités ne sont alors plus `partager`.
 On peut ainsi changer l'aspect visuel de sont application sans pour autant impacter le `code métier`.
 
-3. Expliquer dans quels cas on doit privilégier le pattern MVC.
-
+3. Expliquer dans quels cas on doit privilégier le pattern MVC.  
+*Le pattern MVC est très utilisé dans les applications "client lourd" et les applications web.*
 ## A faire (obligatoire)
 
 - Render le jeu fonctionel tout en respectant le design pattern MVC.
@@ -37,16 +37,16 @@ On peut ainsi changer l'aspect visuel de sont application sans pour autant impac
 
 ### Observer Observable
 
-Afin de mettre à jour la vue à chaque nouvelle génération du jeu, la fonction `updated` doit notifier la view afin qu'elle se mette à jour.
+Afin de mettre à jour la vue à chaque nouvelle génération du jeu, la fonction `updated` doit notifier la view afin qu'elle se mette à jour. Après la création de la vue et du modèle, la vi=ue est ajouter au observeur avec la fonction addObserver de la classe modèle
 En quoi cela relève du design pattern ObserverObservable.
 
-1. Expliquer votre implémentation:
-
+1. Expliquer votre implémentation:  
+J'ajoute une liste d'obervers au modèle. La fonction updated appelle la fonction update de chaque observers de la liste. la vue possède donc une fonction update qui redessine le jeu.  
 L'usage d'une callback permet ici de `notifier` afin dire à la _View_ de se redessiner.
 L'objet _Model_ n'a pas de lien avec `la vue` pourtant grâce à la `fonction updated` il peut notifier la `vue`.
 
 2. Insérer ici un UML montrant le pattern Observer-Observable liés aux objects de ce TP.
-
+![alt text](./image/diagrammeObs.PNG)
 ## Optionel
 
 > Si vous voulez apprendre d'autres choses
